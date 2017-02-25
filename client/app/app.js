@@ -15,11 +15,15 @@ angular.module('app', [
     Common,
     Components
   ])
+  .config(($compileProvider) => {
+    "ngInject";
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+  })
   .config(($locationProvider) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
-    $locationProvider.html5Mode(false).hashPrefix('!');
+    $locationProvider.html5Mode(false);
   })
 
   .component('app', AppComponent);
