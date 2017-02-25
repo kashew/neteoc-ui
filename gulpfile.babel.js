@@ -70,6 +70,8 @@ gulp.task('webpack', ['clean'], (cb) => {
   gulp.src('package.json').pipe(gulp.dest('./dist/')); 
   gulp.src('index.html').pipe(gulp.dest('./dist/')); 
   gulp.src('main.js').pipe(gulp.dest('./dist/')); 
+
+  // figure out how to electron-packager dist neteoc --platform=windows --arch=32
 });
 
 gulp.task('serve', () => {
