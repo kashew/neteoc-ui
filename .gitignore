@@ -6,9 +6,22 @@ node_modules
 *.log
 dist/
 www/
+
 platforms/*/build/
+platforms/*/assets/www
+platforms/*/bin
+platforms/*/gen
+platforms/*/local.properties
+platforms/*/ant-build
+platforms/*/ant-gen
+platforms/*/CordovaLib/ant-build
+platforms/*/CordovaLib/ant-gen
+platforms/*/CordovaLib/bin
+platforms/*/CordovaLib/gen
+platforms/*/CordovaLib/local.properties
 
 .idea
 .idea/*
 .vscode
 .vscode/*
+*.lock
