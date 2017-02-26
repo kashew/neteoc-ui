@@ -21,6 +21,7 @@ import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
 
 let root = 'client';
+let distFolder = 'www';   // Thus demandeth Cordova
 
 // helper method for resolving paths
 let resolveToApp = (glob = '') => {
@@ -45,7 +46,7 @@ let paths = {
   ],
   output: root,
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
-  dest: path.join(__dirname, 'dist')
+  dest: path.join(__dirname, distFolder)
 };
 
 // use webpack.config.js to build modules
@@ -67,9 +68,9 @@ gulp.task('webpack', ['clean'], (cb) => {
     cb();
   });
 
-  gulp.src('package.json').pipe(gulp.dest('./dist/')); 
-  gulp.src('index.html').pipe(gulp.dest('./dist/')); 
-  gulp.src('main.js').pipe(gulp.dest('./dist/')); 
+  gulp.src('package.json').pipe(gulp.dest('./' + distFolder)); 
+  gulp.src('index.html').pipe(gulp.dest('./' + distFolder)); 
+  gulp.src('main.js').pipe(gulp.dest('./' + distFolder)); 
 
   // figure out how to electron-packager dist neteoc --platform=windows --arch=32
 });
